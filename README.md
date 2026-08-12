@@ -6,7 +6,16 @@ Extract and convert AI agent traces into training JSONL. Fast, single binary, no
 
 Agent trace files (Claude Code, Codex, Pi, Cursor, etc.) are all different formats. If you want to use them for training, you need to normalize them into something consistent. lix does that — one command, one binary.
 
-There's also [teich](https://github.com/TeichAI/teich) which does this and a lot more. lix is narrower: it just converts traces. The tradeoff is speed (~2-3x faster) and being a single ~8 MB binary with no dependencies.
+There's also [teich](https://github.com/TeichAI/teich) which does this and a lot more. lix is narrower: it just converts traces. The tradeoff is speed, memory, and being a single ~8 MB binary with no dependencies.
+
+## Performance
+
+lix is written in Rust with a streaming, two-pass parser:
+
+- **Streaming memory**: ~9 MB RSS on multi-hundred-MB trace directories, vs ~163 MB for the Python reference — no full-file loading, constant memory regardless of input size
+- **Speed**: ~2-3x faster than the Python reference on the same corpus
+- **Single static binary**: ~8 MB, no Python runtime, no dependencies — drops onto any machine
+- **Byte-identical output**: `lix verify` regression-tests the release binary against golden files produced from the reference tool's fixtures
 
 ## Usage
 
