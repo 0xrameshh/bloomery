@@ -32,7 +32,7 @@ pub fn handle_generate(out_dir: &Path, count: usize) -> Result<(), Box<dyn std::
         out_dir.display()
     );
     println!(
-        "Try: lix extract {} --out training.jsonl",
+        "Try: bloomery extract {} --out training.jsonl",
         out_dir.display()
     );
     Ok(())

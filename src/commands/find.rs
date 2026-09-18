@@ -15,7 +15,7 @@ pub fn handle_find(_all: bool) -> Result<(), Box<dyn std::error::Error>> {
         }
         println!();
         println!("Pass a trace file directly:");
-        println!("  lix extract ~/.claude/transcripts/session-123.jsonl");
+        println!("  bloomery extract ~/.claude/transcripts/session-123.jsonl");
     } else {
         println!("Found {} trace file(s):", traces.len());
         println!();
@@ -24,7 +24,7 @@ pub fn handle_find(_all: bool) -> Result<(), Box<dyn std::error::Error>> {
         }
         println!();
         println!("Extract them with:");
-        println!("  lix extract <path-to-directory>");
+        println!("  bloomery extract <path-to-directory>");
     }
     Ok(())
 }

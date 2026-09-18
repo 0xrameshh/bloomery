@@ -41,7 +41,7 @@ impl FileSet {
                     format!(
                         "path does not exist: {}\n\
                          Pass a trace file or directory of trace files.\n\
-                         Use `lix find` to discover traces automatically.",
+                         Use `bloomery find` to discover traces automatically.",
                         input.display()
                     ),
                 ),

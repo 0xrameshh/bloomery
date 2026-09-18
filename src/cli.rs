@@ -4,7 +4,7 @@ use clap::{Parser, Subcommand};
 
 #[derive(Parser)]
 #[command(
-    name = "lix",
+    name = "bloomery",
     version,
     about = "Extract, clean, and format AI agent traces into ML-ready JSONL"
 )]
@@ -44,7 +44,7 @@ pub enum Commands {
         keep_incomplete: bool,
 
         /// Number of worker threads
-        #[arg(short, long, env = "LIX_CONCURRENCY")]
+        #[arg(short, long, env = "BLOOMERY_CONCURRENCY")]
         concurrency: Option<usize>,
 
         /// Write a JSON report to this path
@@ -67,7 +67,7 @@ pub enum Commands {
         out: PathBuf,
         #[arg(short, long)]
         model: Option<String>,
-        #[arg(short, long, env = "LIX_CONCURRENCY")]
+        #[arg(short, long, env = "BLOOMERY_CONCURRENCY")]
         concurrency: Option<usize>,
         #[arg(short, long)]
         report: Option<PathBuf>,

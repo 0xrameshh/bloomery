@@ -33,7 +33,7 @@ pub fn handle_convert(
                 .map(|p| p.display().to_string())
                 .unwrap_or_default();
             eprintln!("No trace files found at: {input_label}");
-            eprintln!("Try:  lix find");
+            eprintln!("Try:  bloomery find");
         }
     }
     if let Some(rp) = report {

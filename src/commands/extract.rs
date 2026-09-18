@@ -40,11 +40,11 @@ fn print_file_report(fr: &FileReport) {
 fn eprint_help_no_files(input: &str) {
     if input.is_empty() {
         eprintln!("No trace files found in common locations (~/.claude/logs, etc.).");
-        eprintln!("Try:  lix find");
-        eprintln!("Or:   lix extract <path-to-trace-file>");
+        eprintln!("Try:  bloomery find");
+        eprintln!("Or:   bloomery extract <path-to-trace-file>");
     } else {
         eprintln!("No trace files found at: {input}");
-        eprintln!("Try:  lix find");
+        eprintln!("Try:  bloomery find");
     }
 }
 
@@ -146,7 +146,7 @@ fn extract_staged(
     let readme = staging_dir.join("README.md");
     let readme_content = format!(
         "# Agent Traces\n\n\
-         Extracted by lix.\n\n\
+         Extracted by bloomery.\n\n\
          - {} raw trace files\n\
          - {} sessions converted\n\
          - {} replacements\n\

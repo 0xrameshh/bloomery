@@ -1,7 +1,7 @@
 use clap::Parser;
 use tracing_subscriber::EnvFilter;
 
-use lix::{Cli, Commands};
+use bloomery::{Cli, Commands};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     tracing_subscriber::fmt()
@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             quiet,
             staging_dir,
             ..
-        } => lix::commands::handle_extract(
+        } => bloomery::commands::handle_extract(
             input,
             out,
             model,
@@ -41,16 +41,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             concurrency,
             report,
             quiet,
-        } => lix::commands::handle_convert(input, out, model, concurrency, report, quiet),
-        Commands::Clean { input, out } => lix::commands::handle_clean(input, out),
-        Commands::Info { file } => lix::commands::handle_info(file),
-        Commands::Find { all } => lix::commands::handle_find(all),
+        } => bloomery::commands::handle_convert(input, out, model, concurrency, report, quiet),
+        Commands::Clean { input, out } => bloomery::commands::handle_clean(input, out),
+        Commands::Info { file } => bloomery::commands::handle_info(file),
+        Commands::Find { all } => bloomery::commands::handle_find(all),
         Commands::Verify {
             input,
             golden,
             provider: _provider,
-        } => lix::commands::handle_verify(input, golden),
-        Commands::Generate { out, count, .. } => lix::commands::handle_generate(&out, count),
-        Commands::Studio { input, port } => lix::commands::handle_studio(&input, port),
+        } => bloomery::commands::handle_verify(input, golden),
+        Commands::Generate { out, count, .. } => bloomery::commands::handle_generate(&out, count),
+        Commands::Studio { input, port } => bloomery::commands::handle_studio(&input, port),
     }
 }

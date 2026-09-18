@@ -7,7 +7,7 @@ fn bench_parse_minimal(c: &mut Criterion) {
         .join("claude_minimal.jsonl");
     c.bench_function("parse_minimal", |b| {
         b.iter(|| {
-            let events = lix::read_all_events(black_box(&fixture)).unwrap();
+            let events = bloomery::read_all_events(black_box(&fixture)).unwrap();
             black_box(events);
         });
     });
@@ -20,7 +20,7 @@ fn bench_parse_toolcall(c: &mut Criterion) {
         .join("claude_toolcall.jsonl");
     c.bench_function("parse_toolcall", |b| {
         b.iter(|| {
-            let events = lix::read_all_events(black_box(&fixture)).unwrap();
+            let events = bloomery::read_all_events(black_box(&fixture)).unwrap();
             black_box(events);
         });
     });

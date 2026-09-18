@@ -1,16 +1,16 @@
 [package]
-name = "lix"
+name = "bloomery"
 version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
 license = "Apache-2.0"
 
 [[bin]]
-name = "lix"
+name = "bloomery"
 path = "src/main.rs"
 
 [lib]
-name = "lix"
+name = "bloomery"
 path = "src/lib.rs"
 
 [dependencies]

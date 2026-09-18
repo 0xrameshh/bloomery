@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use lix::{Cleaner, LineReader};
+use bloomery::{Cleaner, LineReader};
 
 #[test]
 fn cleaner_redacts_api_keys() {
@@ -82,7 +82,7 @@ fn cleaner_multiple_patterns_in_one_line() {
 
     let reader = LineReader::open(&input).unwrap();
     let cleaner = Cleaner::new();
-    let mut report = lix::CleanReport::default();
+    let mut report = bloomery::CleanReport::default();
 
     for line in reader {
         let ev = line.unwrap();

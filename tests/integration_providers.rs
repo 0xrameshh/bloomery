@@ -1,10 +1,10 @@
 mod common;
 
-use lix::{run_pipeline, PipelineOpts};
+use bloomery::{run_pipeline, PipelineOpts};
 use std::fs;
 use std::path::Path;
 
-fn run_extract(input: &Path) -> (Vec<u8>, lix::ExtractionReport) {
+fn run_extract(input: &Path) -> (Vec<u8>, bloomery::ExtractionReport) {
     let dir = tempfile::tempdir().unwrap();
     let output = dir.path().join("out.jsonl");
     let report = run_pipeline(input, &output, PipelineOpts::default()).unwrap();

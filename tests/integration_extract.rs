@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use lix::{run_pipeline, PipelineOpts};
+use bloomery::{run_pipeline, PipelineOpts};
 
 #[test]
 fn extract_pipeline_produces_output() {
